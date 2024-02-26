@@ -201,17 +201,25 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    lazy = false,
+    ---- Theme inspired by Atom
+    --'navarasu/onedark.nvim',
+    --priority = 1000,
+    --lazy = false,
+    --config = function()
+    --  require('onedark').setup {
+    --    -- Set a style preset. 'dark' is default.
+    --    style = 'dark', -- dark, darker, cool, deep, warm, warmer, light
+    --  }
+    --  require('onedark').load()
+    --end,
+    'rose-pine/neovim',
+    as = 'rose-pine',
     config = function()
-      require('onedark').setup {
-        -- Set a style preset. 'dark' is default.
-        style = 'dark', -- dark, darker, cool, deep, warm, warmer, light
-      }
-      require('onedark').load()
-    end,
+      vim.cmd('colorscheme rose-pine')
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    end
   },
 
   {
